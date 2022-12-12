@@ -12,6 +12,9 @@
 
 <body>
   <header class="head">
+    <div id="show-desktop">
+      <i class="fa-sharp fa-solid fa-bars"></i>
+    </div>
     <div class="head-left">
       <div class="flex-head">
         <h1 class="h1-color">INCREDIBLE</h1>
@@ -21,6 +24,28 @@
         <a href="#">CONTACT</a>
       </div>
     </div>
+    </div>
+
+    <!-- Mobile-->
+    <div class="head-top">
+      <div class="flex-top">
+        <div>
+          <h1 class="h1-color">INCREDIBLE</h1>
+        </div>
+        <div id="show">
+          <i class="fa-sharp fa-solid fa-bars"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="menu">
+      <a href="#">HOME</a>
+      <a href="#">ABOUT</a>
+      <a href="#">GALLERY</a>
+      <a href="#">CONTACT</a>
+    </div>
+
     <div class="flex-content">
       <h1>welcome to the incridible </h1>
       <p>they is some text inside of a block text inside of a block</p>
@@ -98,14 +123,14 @@
       <p>they is some text inside of a block text inside of a block</p>
     </div>
     <div class="grid-card">
-      <div> <img src="./img/picture.jpg" alt="" width="100%"> </div>
-      <div> <img src="./img/picture.jpg" alt="" width="100%"> </div>
-      <div> <img src="./img/picture.jpg" alt="" width="100%"> </div>
-      <div> <img src="./img/picture.jpg" alt="" width="100%"> </div>
-      <div> <img src="./img/picture.jpg" alt="" width="100%"> </div>
-      <div> <img src="./img/picture.jpg" alt="" width="100%"> </div>
-      <div> <img src="./img/picture.jpg" alt="" width="100%"> </div>
-      <div> <img src="./img/picture.jpg" alt="" width="100%"> </div>
+      <div> <img src="./img/8.jpg" alt="" width="100%"> </div>
+      <div> <img src="./img/7.jpg" alt="" width="100%"> </div>
+      <div> <img src="./img/3.jpg" alt="" width="100%"> </div>
+      <div> <img src="./img/4.jpg" alt="" width="100%"> </div>
+      <div> <img src="./img/3.jpg" alt="" width="100%"> </div>
+      <div> <img src="./img/6.jpg" alt="" width="100%"> </div>
+      <div> <img src="./img/7.jpg" alt="" width="100%"> </div>
+      <div> <img src="./img/8.jpg" alt="" width="100%"> </div>
     </div>
   </section>
 
@@ -140,6 +165,50 @@
   <footer class="footer">
     <p>they is some text inside of a block</p>
   </footer>
+
+  <!-- Jquery -->
+
+  <script src="jquery-3.6.1.min.js"></script>
+
+  <script>
+    // desktop 
+    $("#show-desktop").click(function () {
+      console.log("click1")
+      $(".head-left").animate({
+        "left": "0",
+      }, 500, function () {
+        // Animation complete.
+        console.log("click3")
+      });
+    });
+
+    $(document).mouseup((e) => {
+      var menu = $(".head-left");
+      if (!menu.is(e.target && menu.has(e.target).length == 0)) {
+        $(".head-left").animate({
+          "left": "-100%",
+        }, 400)
+      }
+    })
+
+    // mobile
+    $("#show").click(function () {
+      $("#menu").animate({
+        "top": "56px",
+      }, 500, function () {
+        // Animation complete.
+      });
+    });
+
+    $(document).mouseup((e) => {
+      var list = $("show");
+      if (!list.is(e.target && list.has(e.target).length == 0)) {
+        $("#menu").animate({
+          "top": "-100%",
+        }, 400)
+      }
+    })
+  </script>
 
 </body>
 

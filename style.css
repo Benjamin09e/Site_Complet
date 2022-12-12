@@ -39,12 +39,31 @@ a {
   color: white;
 }
 
+#show-desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ce404c;
+}
+
+#show-desktop i {
+  font-size: 35px;
+}
+
 .head-left {
   position: absolute;
   width: 25vw;
-  left: 0;
+  left: -100%;
   height: 80%;
   background-color: #2d3e4e;
+}
+
+.head-top {
+  display: none;
+}
+
+#menu {
+  display: none;
 }
 
 .h1-color {
@@ -194,6 +213,44 @@ a {
 /*  ----- Media Query ---------*/
 
 @media screen and (max-width: 687px) {
+  #show-desktop {
+    display: none;
+  }
+
+  .head-top {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: max-content;
+    background-color: #2d3e4e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #menu {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: -100px;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: #2b5985;
+    height: max-content;
+  }
+
+  .flex-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /*#menu {
+    display: none;
+  }
+  */
+
   .head-left {
     display: none;
   }
